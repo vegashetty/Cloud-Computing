@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		 <bean id="userValidator" class="com.me.FinalProject.controller.UserValidator"></bean>
+		<bean id="userDAO" class="com.me.FinalProject.DAO.UserDAO"></bean>
+		<bean id="customerDAO" class="com.me.FinalProject.DAO.CustomerTransactionDAO"></bean>
+		<bean id="adminDAO" class ="com.me.FinalProject.DAO.AdminDAO"></bean>
+		<bean id="balanceDetailsDAO" class = "com.me.FinalProject.DAO.BalanceDetailsDAO"></bean>
+</beans>

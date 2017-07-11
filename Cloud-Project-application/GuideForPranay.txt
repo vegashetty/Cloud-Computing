@@ -1,0 +1,9 @@
+Commented Add user in Admin Controller
+
+Need to move add user controller from Admin Controller to StartUp Items Controller
+
+Currently modified hibernate configuration
+
+Deal with About us on Home Page
+
+Bank Integration Oauth

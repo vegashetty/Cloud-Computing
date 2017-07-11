@@ -1,0 +1,30 @@
+language: java
+java: 
+- 1.8
+
+deploy:
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: cloudprojstorage
+  skip_cleanup: true
+  on: &2
+       repo: shramikajadhav/CloudProject
+       bucket: cloudprojstorage
+       region: us-east-1
+- provider : codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: cloudprojstorage
+  key: latest.zip
+  bundle_type : zip
+  application: TeamUltron
+  deployment_group: CloudProject
+  region : us-east-1
+  on : *2	
+
+script:
+- zip -r latest *
+- mkdir -p dpl_cd_upload
+- mv latest.zip dpl_cd_upload/latest.zip
+
